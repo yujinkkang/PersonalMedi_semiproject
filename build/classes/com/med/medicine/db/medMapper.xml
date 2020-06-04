@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="medInsert">
+
+	<resultMap type="medDto" id="medMap">
+		<result property="member_seq" column="MEMBER_SEQ"/>
+		<result property="drug_code" column="DRUG_CODE"/>
+		<result property="mydrug_name" column="MYDRUG_NAME"/>
+		<result property="mydrug_about" column="MYDRUG_ABOUT"/>
+		<result property="mydrug_image" column="MYDRUG_IMAGE"/>
+		<result property="mydrug_date" column="MYDRUG_DATE"/>
+	</resultMap>
+	
+	<insert id="insertMedicine" parameterType="medDto">
+		INSERT INTO MYDRUG VALUES
+		(MYDRUG_SEQ.NEXTVAL, #{member_seq}, #{drug_code}, #{mydrug_name}, #{mydrug_about}, #{mydrug_image}, SYSDATE)
+	</insert>
+	
+	<select id="selectList" parameterType="int" resultMap="medMap">
+		SELECT MYDRUG_SEQ, MEMBER_SEQ, DRUG_CODE, MYDRUG_NAME, MYDRUG_ABOUT, MYDRUG_IMAGE, MYDRUG_DATE
+		FROM MYDRUG WHERE MEMBER_SEQ = #{member_seq}
+		ORDER BY MYDRUG_SEQ DESC
+	</select>
+	
+	<delete id="deleteMedicine" parameterType="int">
+		DELETE FROM MYDRUG WHERE MYDRUG_SEQ = #{mydrug_seq}
+	</delete>
+	
+</mapper>

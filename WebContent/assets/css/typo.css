@@ -1,0 +1,82 @@
+
+  .container1 svg {
+    max-width: 45rem;
+    width: 100%;
+    height: 100px;
+    fill: none;
+    stroke: rgb(182, 3, 226);
+    stroke-width: 7;
+  }
+  .container1 svg tspan > tspan {
+    stroke-dasharray: 1500;
+    stroke-dashoffset: -1500;
+  }
+  .container1 svg tspan > tspan:nth-of-type(1) {
+    -webkit-animation: draw 500ms 1000ms forwards;
+            animation: draw 500ms 1000ms forwards;
+  }
+  .container1 svg tspan > tspan:nth-of-type(2) {
+    -webkit-animation: draw 500ms 2000ms forwards;
+            animation: draw 500ms 2000ms forwards;
+  }
+  .container1 svg tspan > tspan:nth-of-type(3) {
+    -webkit-animation: draw 500ms 3000ms forwards;
+            animation: draw 500ms 3000ms forwards;
+  }
+  .container1 svg tspan > tspan:nth-of-type(4) {
+    -webkit-animation: draw 500ms 4000ms forwards;
+            animation: draw 500ms 4000ms forwards;
+  }
+  .container1 svg tspan > tspan:nth-of-type(5) {
+    -webkit-animation: draw 500ms 5000ms forwards;
+            animation: draw 500ms 5000ms forwards;
+  }
+  .container1 svg tspan > tspan:nth-of-type(6) {
+    -webkit-animation: draw 500ms 6000ms forwards;
+            animation: draw 500ms 6000ms forwards;
+  }
+  .container1 svg tspan > tspan:nth-of-type(7) {
+    -webkit-animation: draw 500ms 7000ms forwards;
+            animation: draw 1500ms 7000ms forwards;
+  }
+  .container1 svg tspan > tspan:nth-of-type(8) {
+    -webkit-animation: draw 500ms 8000ms forwards;
+            animation: draw 500ms 8000ms forwards;
+  }
+  .container1 svg tspan > tspan:nth-of-type(9) {
+    -webkit-animation: draw 500ms 9000ms forwards;
+            animation: draw 500ms 9000ms forwards;
+  }
+  .container1 svg tspan > tspan:nth-of-type(10) {
+    -webkit-animation: draw 500ms 10000ms forwards;
+            animation: draw 500ms 10000ms forwards;
+  }
+  .container1 svg tspan > tspan:nth-of-type(11) {
+    -webkit-animation: draw 500ms 11000ms forwards;
+            animation: draw 500ms 11000ms forwards;
+  }
+  .container1 svg tspan > tspan:nth-of-type(12) {
+    -webkit-animation: draw 500ms 12000ms forwards;
+            animation: draw 500ms 12000ms forwards;
+  }
+  .container1 svg tspan > tspan:nth-of-type(13) {
+    -webkit-animation: draw 500ms 13000ms forwards;
+            animation: draw 500ms 13000ms forwards;
+  }
+  .container1 svg tspan > tspan:nth-of-type(14) {
+    -webkit-animation: draw 500ms 140000ms forwards;
+            animation: draw 500ms 140000ms forwards;
+  }
+
+  
+  @-webkit-keyframes draw {
+    100% {
+      stroke-dashoffset: 0;
+    }
+  }
+  
+  @keyframes draw {
+    100% {
+      stroke-dashoffset: 0;
+    }
+  }

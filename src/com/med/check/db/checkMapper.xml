@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="medCheck">
+	
+  <select id="checkList" resultType="CheckDto">
+    SELECT * FROM CHECKUP
+    ORDER BY CHECKUP_SEQ ASC
+  </select>
+  
+  <select id="checkMemberList" parameterType="int" resultType="CheckDto">
+  	SELECT * FROM CHECKUP
+  	WHERE MEMBER_SEQ =#{member_seq}
+  	ORDER BY CHECKUP_SEQ ASC
+  </select>
+  
+  <select id="checkBasicInsert">
+  	INSERT INTO CHECKUP VALUES(
+  		CHECKUP_SEQ.NEXTVAL, #{member_seq},
+	  	#{checkup_type},#{checkup_year},#{checkup_month},
+	  	#{checkup_day},#{checkup_regist},#{checkup_height},#{checkup_weight},
+	  	#{checkup_leye},#{checkup_reye},#{checkup_lhear},#{checkup_rhear},#{checkup_maxblood},#{checkup_minblood},
+	  	#{checkup_kidney},#{checkup_hemo},null,#{checkup_beforesugar},null
+  	)
+  	
+  </select>
+  
+  <select id="checkPersonalInsert">
+     INSERT INTO CHECKUP VALUES(
+        CHECKUP_SEQ.NEXTVAL, #{member_seq},
+        #{checkup_type},#{checkup_year},#{checkup_month},
+        #{checkup_day},#{checkup_height},#{checkup_weight},
+        null,null,null,null,#{checkup_maxblood},#{checkup_minblood},
+        #{checkup_kidney},null,null,null,null
+     )
+  
+  </select>
+  
+  <select id="checkDetailInsert">
+     INSERT INTO CHECKUP VALUES(
+        CHECKUP_SEQ.NEXTVAL, #{member_seq},
+        #{checkup_type},#{checkup_year},#{checkup_month},
+        #{checkup_day},null,null,null,
+        null,null,null,null,null,null,
+        null,null,#{checkup_fundo},#{checkup_beforesugar},#{checkup_aftersugar}
+     )
+     
+  </select>
+  
+    <select id="checkDetail" parameterType="int" resultType="CheckDto">
+    SELECT * FROM CHECKUP
+  	WHERE MEMBER_SEQ =#{member_seq}
+  	ORDER BY CHECKUP_YEAR ASC, CHECKUP_MONTH ASC, CHECKUP_DAY ASC
+  </select>
+  
+  <select id="checkDetail2" parameterType="int" resultType="CheckDto">
+    SELECT * FROM CHECKUP
+  	WHERE MEMBER_SEQ =#{member_seq} AND CHECKUP_LEYE IS NOT NULL
+  	ORDER BY CHECKUP_YEAR ASC, CHECKUP_MONTH ASC, CHECKUP_DAY ASC
+  </select>
+  
+  
+  
+</mapper>

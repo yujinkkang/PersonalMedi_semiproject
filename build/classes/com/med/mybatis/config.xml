@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd" >
+<configuration>
+
+  <properties resource="com/med/mybatis/db.properties"></properties>
+  
+  <typeAliases>
+    <typeAlias type="com.med.login.dto.LoginDto" alias="loginDto"/>
+    <typeAlias type="com.med.check.dto.CheckDto" alias="CheckDto"/>
+    <typeAlias type="com.med.medicine.dto.MedicineDto" alias="medDto"/>
+    <typeAlias type="com.med.question.dto.QuestionDto" alias="questionDto"/>
+    <typeAlias type="com.med.calendar.dto.CalendarDto" alias="CalendarDto"/>
+  </typeAliases>
+
+  <environments default="development">
+    <environment id="development">
+      <transactionManager type="JDBC"/>
+      <dataSource type="POOLED">
+        <property name="driver" value="${driver}"/>
+        <property name="url" value="${url}"/>
+        <property name="username" value="${username}"/>
+        <property name="password" value="${password}"/>
+      </dataSource>
+    </environment>
+  </environments>
+  
+  <mappers>
+    <mapper resource="com/med/login/db/loginMapper.xml"/>
+    <mapper resource="com/med/login/db/registMapper.xml"/>
+    <mapper resource="com/med/check/db/checkMapper.xml"/>
+    <mapper resource="com/med/medicine/db/medMapper.xml"/>
+    <mapper resource="com/med/question/db/questionMapper.xml"/>
+    <mapper resource="com/med/calendar/db/calMapper.xml"/>
+  </mappers>
+  
+</configuration>

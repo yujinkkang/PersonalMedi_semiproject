@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+.out {
+	width: 100%;
+	text-align: center;
+}
+
+.in {
+	display: inline-block;
+	width: 50%;
+}
+
+
+.fc-sun {color:#e31b23}
+.fc-sat {color:#007dc3}
+
+span.fc-time{
+	display: none;
+}

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="question">
+
+  <resultMap type="questionDto" id="questionMap">
+    <result property="question_boardno" column="QUESTION_BOARDNO"/>
+    <result property="member_seq" column="MEMBER_SEQ"/>
+    <result property="question_groupno" column="QUESTION_GROUPNO"/>
+    <result property="question_level" column="QUESTION_LEVEL"/>
+    <result property="question_titletab" column="QUESTION_TITLETAB"/>
+    <result property="question_title" column="QUESTION_TITLE"/>
+    <result property="question_content" column="QUESTION_CONTENT"/>
+    <result property="question_regdate" column="QUESTION_REGDATE"/>
+    <result property="question_readcount" column="QUESTION_READCOUNT"/>
+  </resultMap>
+
+  <select id="countAll" resultType="int">
+	SELECT COUNT(*) FROM (
+	SELECT ROWNUM AS RNUM, A.* FROM
+		(SELECT * FROM QUESTION
+			ORDER BY QUESTION_GROUPNO DESC, QUESTION_LEVEL, QUESTION_BOARDNO DESC) A) B
+  </select>
+  
+  <select id="countList" parameterType="map" resultType="questionDto">
+  	SELECT B.* FROM (
+	SELECT ROWNUM AS RNUM, A.* FROM
+		(SELECT B.MEMBER_ID, A.* FROM QUESTION A, MEMBER B
+			WHERE A.MEMBER_SEQ = B.MEMBER_SEQ
+			ORDER BY QUESTION_GROUPNO DESC, QUESTION_LEVEL, QUESTION_BOARDNO DESC) A) B
+	WHERE RNUM BETWEEN ${recordStartNum} AND ${recordEndNum}
+  </select>
+
+  <select id="searchCount0" parameterType="String" resultType="int">
+  	SELECT COUNT(*) FROM (
+	SELECT ROWNUM AS RNUM, A.* FROM
+		(SELECT B.MEMBER_ID, A.* FROM QUESTION A, MEMBER B
+			WHERE A.MEMBER_SEQ = B.MEMBER_SEQ
+			AND QUESTION_TITLE LIKE #{searchKeyword}
+			ORDER BY QUESTION_GROUPNO DESC, QUESTION_LEVEL, QUESTION_BOARDNO DESC) A) B
+  </select>
+  
+  <select id="searchCount1" parameterType="String" resultType="int">
+  	SELECT COUNT(*) FROM (
+	SELECT ROWNUM AS RNUM, A.* FROM
+		(SELECT B.MEMBER_ID, A.* FROM QUESTION A, MEMBER B
+			WHERE A.MEMBER_SEQ = B.MEMBER_SEQ
+			AND QUESTION_CONTENT LIKE #{searchKeyword}
+			ORDER BY QUESTION_GROUPNO DESC, QUESTION_LEVEL, QUESTION_BOARDNO DESC) A) B
+  </select>
+  
+  <select id="searchCount2" parameterType="String" resultType="int">
+  	SELECT COUNT(*) FROM (
+	SELECT ROWNUM AS RNUM, A.* FROM
+		(SELECT B.MEMBER_ID, A.* FROM QUESTION A, MEMBER B
+			WHERE A.MEMBER_SEQ = B.MEMBER_SEQ
+			AND QUESTION_TITLE LIKE #{searchKeyword} OR QUESTION_CONTENT LIKE #{searchKeyword}
+			ORDER BY QUESTION_GROUPNO DESC, QUESTION_LEVEL, QUESTION_BOARDNO DESC) A) B
+  </select>
+  
+  <select id="optionList0" parameterType="map" resultType="questionDto">
+  	SELECT B.* FROM (
+	SELECT ROWNUM AS RNUM, A.* FROM
+		(SELECT B.MEMBER_ID, A.* FROM QUESTION A, MEMBER B
+			WHERE A.MEMBER_SEQ = B.MEMBER_SEQ
+			AND QUESTION_TITLE LIKE #{searchKeyword}
+			ORDER BY QUESTION_GROUPNO DESC, QUESTION_LEVEL, QUESTION_BOARDNO DESC) A) B
+	WHERE RNUM BETWEEN ${recordStartNum} AND ${recordEndNum}
+  </select>
+  
+  <select id="optionList1" parameterType="map" resultType="questionDto">
+  	SELECT B.* FROM (
+	SELECT ROWNUM AS RNUM, A.* FROM
+		(SELECT B.MEMBER_ID, A.* FROM QUESTION A, MEMBER B
+			WHERE A.MEMBER_SEQ = B.MEMBER_SEQ
+			AND QUESTION_CONTENT LIKE #{searchKeyword}
+			ORDER BY QUESTION_GROUPNO DESC, QUESTION_LEVEL, QUESTION_BOARDNO DESC) A) B
+	WHERE RNUM BETWEEN ${recordStartNum} AND ${recordEndNum}
+  </select>
+  
+  <select id="optionList2" parameterType="map" resultType="questionDto">
+  	SELECT B.* FROM (
+	SELECT ROWNUM AS RNUM, A.* FROM
+		(SELECT B.MEMBER_ID, A.* FROM QUESTION A, MEMBER B
+			WHERE A.MEMBER_SEQ = B.MEMBER_SEQ
+			AND QUESTION_TITLE LIKE #{searchKeyword} OR QUESTION_CONTENT LIKE #{searchKeyword}
+			ORDER BY QUESTION_GROUPNO DESC, QUESTION_LEVEL, QUESTION_BOARDNO DESC) A) B
+	WHERE RNUM BETWEEN ${recordStartNum} AND ${recordEndNum}
+  </select>
+  
+  <select id="selectOne" parameterType="int" resultType="questionDto">
+    SELECT B.* FROM (
+	SELECT ROWNUM AS RNUM, A.* FROM
+		(SELECT B.MEMBER_ID, A.* FROM QUESTION A, MEMBER B
+			WHERE A.MEMBER_SEQ = B.MEMBER_SEQ) A) B WHERE QUESTION_BOARDNO = #{question_boardno}
+  </select>
+  
+  <insert id="insert" parameterType="questionDto">
+     INSERT INTO QUESTION VALUES(QUESTION_BOARDNOSEQ.NEXTVAL, #{member_id}, QUESTION_GROUPNOSEQ.NEXTVAL, 0, 0, #{question_title}, #{question_content}, SYSDATE, 0) 
+  </insert>
+  
+  <insert id="insertQuestion" parameterType="questionDto">
+  INSERT INTO QUESTION VALUES(QUESTION_BOARDNOSEQ.NEXTVAL, 1, (SELECT QUESTION_GROUPNO FROM QUESTION WHERE QUESTION_BOARDNO =#{question_boardno}), (SELECT QUESTION_LEVEL FROM QUESTION WHERE QUESTION_BOARDNO =#{question_boardno})+1, (SELECT QUESTION_TITLETAB FROM QUESTION WHERE QUESTION_BOARDNO =#{question_boardno})+1, #{question_title}, #{question_content}, SYSDATE, 0) 
+  </insert>
+  
+  <update id="update" parameterType="questionDto">
+   UPDATE QUESTION SET QUESTION_TITLE=#{question_title}, QUESTION_CONTENT=#{question_content} WHERE QUESTION_BOARDNO=#{question_boardno} 
+  </update>
+  
+  <update id="updateQuestion" parameterType="questionDto">
+   UPDATE QUESTION SET QUESTION_LEVEL = QUESTION_LEVEL+1 WHERE QUESTION_GROUPNO=(SELECT QUESTION_GROUPNO FROM QUESTION WHERE QUESTION_BOARDNO=#{question_boardno}) AND QUESTION_LEVEL>(SELECT QUESTION_LEVEL FROM QUESTION WHERE QUESTION_BOARDNO=#{question_boardno}) 
+  </update>
+  
+  <delete id="delete" parameterType="int" >
+    DELETE FROM QUESTION WHERE QUESTION_BOARDNO=#{question_boardno}
+  </delete>
+  
+  <update id="updateReadcount" parameterType="int">
+    UPDATE QUESTION SET QUESTION_READCOUNT = QUESTION_READCOUNT+1 WHERE QUESTION_BOARDNO= #{question_boardno} 
+  </update>
+  
+</mapper>

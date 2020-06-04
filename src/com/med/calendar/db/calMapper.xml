@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="medcal">
+  
+  <insert id="calInsert" parameterType="CalendarDto">
+   
+  	INSERT INTO MANAGE VALUES(
+	  	MANAGE_SEQ.NEXTVAL,#{member_seq},#{title},#{start_date},#{end_date}
+  	)
+  </insert>
+  
+  <select id="calMemberList" parameterType="int" resultType="CalendarDto">
+  	SELECT * FROM MANAGE
+  	WHERE MEMBER_SEQ =#{member_seq}
+  	ORDER BY MANAGE_SEQ ASC
+  </select>
+  
+</mapper>

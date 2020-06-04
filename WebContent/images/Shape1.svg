@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="62px" height="88px" viewBox="0 0 62 88" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 63 (92445) - https://sketch.com -->
+    <title>Shape</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-HD" transform="translate(-524.000000, -260.000000)" fill="#F9047A" fill-rule="nonzero">
+            <g id="ic-add-location-24px-copy" transform="translate(502.000000, 260.000000)">
+                <path d="M53,0 C35.9057143,0 22,13.816 22,30.8 C22,53.9 53,88 53,88 C53,88 84,53.9 84,30.8 C84,13.816 70.0942857,0 53,0 Z M70.7142857,35.2 L57.4285714,35.2 L57.4285714,48.4 L48.5714286,48.4 L48.5714286,35.2 L35.2857143,35.2 L35.2857143,26.4 L48.5714286,26.4 L48.5714286,13.2 L57.4285714,13.2 L57.4285714,26.4 L70.7142857,26.4 L70.7142857,35.2 Z" id="Shape"></path>
+            <g class="bubbles-large" stroke-width="7">
+                <g>
+                    <g transform="translate(10 940)">
+                        <circle cx="35" cy="35" r="35"/>
+                    </g>
+                </g>
+                <g>
+                    <g transform="translate(373 940)">
+                        <circle cx="35" cy="35" r="35"/>
+                    </g>
+                </g>
+                <g>
+                    <g transform="translate(408 940)">
+                        <circle cx="35" cy="35" r="35"/>
+                    </g>
+                </g>
+                <g>
+                    <g transform="translate(621 940)">
+                        <circle cx="35" cy="35" r="35"/>
+                    </g>
+                </g>
+                <g>
+                    <g transform="translate(179 940)">
+                        <circle cx="35" cy="35" r="35"/>
+                    </g>
+                </g>
+            </g>
+    
+            <g class="bubbles-small" stroke-width="4">
+                <g>
+                    <g transform="translate(147 984)">
+                        <circle cx="15" cy="15" r="15"/>
+                    </g>
+                </g>
+                <g>
+                    <g transform="translate(255 984)">
+                        <circle cx="15" cy="15" r="15"/>
+                    </g>
+                </g>
+                <g>
+                    <g transform="translate(573 984)">
+                        <circle cx="15" cy="15" r="15"/>
+                    </g>
+                </g>
+                <g>
+                    <g transform="translate(429 984)">
+                        <circle cx="15" cy="15" r="15"/>
+                    </g>
+                </g>
+                <g>
+                    <g transform="translate(91 984)">
+                        <circle cx="15" cy="15" r="15"/>
+                    </g>
+                </g>
+                <g>
+                    <g transform="translate(640 984)">
+                        <circle cx="15" cy="15" r="15"/>
+                    </g>
+                </g>
+                <g>
+                    <g transform="translate(321 984)">
+                        <circle cx="15" cy="15" r="15"/>
+                    </g>
+                </g>
+                <g>
+                    <g transform="translate(376 984)">
+                        <circle cx="15" cy="15" r="15"/>
+                    </g>
+                </g>
+                <g>
+                    <g transform="translate(376 984)">
+                        <circle cx="15" cy="15" r="15"/>
+                    </g>
+                </g>
+                <g>
+                    <g transform="translate(497 984)">
+                        <circle cx="15" cy="15" r="15"/>
+                    </g>
+                </g>
+            </g>
+            
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,185 @@
+
+
+
+fieldset{
+
+    max-width: 500px;
+    width: 100%;
+    margin: 0 auto;
+    border: none;
+
+}
+ 
+  form{
+     
+      
+      margin: 0 auto;
+      max-width: 500px;
+      min-width: 300px;
+      width: 100%;
+      
+  
+      
+      padding: 16px;
+      background-image: url("../../images/member5.png");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      line-height: 1rem;
+      position: relative;
+
+    }
+
+    table{
+
+      margin: 0 auto;
+      max-width: 400px;
+      min-width: 300px;
+      width: 100%;
+      
+      
+    }
+    td,th{
+        border: 1px solid rgb(240, 107, 55);
+    }
+    th{
+        color: white;
+        padding: 0 4px 0 4px;
+        width: 125px;
+        line-height: normal;
+        
+       
+    }
+   
+  
+    .tel1{
+
+      width: 30px;
+      
+  }
+
+  #type1, #type2, #type3{
+
+    margin: 5px 2px 22px 15px;
+ 
+
+  }
+  .radiof{
+
+    text-align: center !important;
+  }
+
+    /* Full-width input fields */
+      input[type=text], input[type=password] {
+      width: 50%;
+      padding: 10px;
+      margin: 15px 0 22px 0;
+      border: none;
+      background: #ee5028;
+      border-radius: 0.2rem;
+      color: white;
+    }
+    
+    input[type=text]:focus, input[type=password]:focus {
+      background-color: rgb(238, 135, 121);
+      outline: none;
+    }
+    input::placeholder{
+
+      color: rgb(247, 242, 242);
+    }
+    label{
+      padding: 15px;
+      margin: 5px 0px 22px 110px;
+    }
+    .selectb{
+      
+      
+      margin: 5px 0px 22px 110px;
+      
+    }
+    .selectc{
+      margin: 5px 0px 22px 110px;
+    }
+    select{
+
+      border:none;
+      border-radius: 0.2rem;
+      margin: 15px 8px 15px 8px;
+      width: 15%;
+      height: 2.5em;
+      color: white;
+      background-color: #ee5028;
+    }
+
+    #radio{
+      margin: 5px 0px 22px 110px;
+    }
+    /* Set a style for the submit button */
+    #btn {
+      background-color: #ee5028;
+      color: rgb(247, 244, 247);
+      
+      border: none;
+      cursor: pointer;
+      width: 25%;
+      opacity: 1;
+      border-radius:0.5rem;
+      margin: 5px 0px 10px 30px;
+      float: left;
+      transition: all 0.5s linear;
+      vertical-align: middle;
+      
+    }
+    
+    #btn:hover, #btn1:hover {
+      opacity: 0.5;
+    }
+    #btn1{
+      background-color: #a02f12;
+      color: rgb(247, 244, 247);
+      
+      border: none;
+      cursor: pointer;
+      width: 20%;
+      opacity: 1;
+      margin: 5px 10px 10px 15px;
+      border-radius:0.5rem;
+      transition: all 0.5s linear;
+      
+    }
+    .btn2{
+      background-color: rgb(107, 51, 107);
+      color: rgb(247, 244, 247);
+      padding: 16px 20px;
+      border: none;
+      cursor: pointer;
+      width: 30%;
+      opacity: 0.9;
+      border-radius: 1rem;
+      position: absolute;
+      top: 500px;
+      right: 65px;
+    }
+    .di{
+        width: 100%;
+        height: 100px;
+        color: white;
+        text-align: center;
+        font-size: 2rem;
+        margin-top: 40px;
+    }
+  
+ 
+ 
+  
+  #member_phone2, #member_phone3{
+      margin-left: auto;
+      margin-right: auto;
+      width: 23.5%;
+  }
+ 
+  
+  footer{
+    height: 150px;
+  }

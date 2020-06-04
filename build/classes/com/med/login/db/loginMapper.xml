@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="medLogin">
+
+	<select id="login" parameterType="loginDto" resultType="loginDto">
+		SELECT MEMBER_SEQ, MEMBER_ID, MEMBER_PW, MEMBER_NAME, MEMBER_BIRTH, 
+		MEMBER_GENDER, MEMBER_EMAIL, MEMBER_ADDR, MEMBER_PHONE, MEMBER_SNS, MEMBER_ENABLED FROM MEMBER
+		WHERE MEMBER_ID = #{member_id} AND MEMBER_PW = #{member_pw}
+	</select>
+	
+	<select id="snsLoginDto" parameterType="loginDto" resultType="loginDto">
+		SELECT MEMBER_SEQ, MEMBER_ID, MEMBER_PW, MEMBER_NAME, MEMBER_BIRTH, 
+		MEMBER_GENDER, MEMBER_EMAIL, MEMBER_ADDR, MEMBER_PHONE, MEMBER_SNS, MEMBER_ENABLED FROM MEMBER
+		WHERE MEMBER_EMAIL = #{member_email}
+	</select>
+	
+	<insert id="insertMember" parameterType="loginDto">
+		INSERT INTO MEMBER VALUES
+		(MEMBER_SEQ.NEXTVAL, #{member_id}, #{member_pw}, #{member_name}, 
+		#{member_birth}, #{member_gender}, #{member_email}, #{member_addr}, #{member_phone},
+		#{member_sns}, 'N')
+	</insert>
+	
+	<select id="checkSNS" parameterType="map" resultType="int">
+		SELECT count(*) FROM MEMBER
+		WHERE MEMBER_SNS = #{member_sns} and MEMBER_EMAIL= #{member_email}
+	</select>
+	
+</mapper>

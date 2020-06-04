@@ -1,0 +1,406 @@
+
+
+
+fieldset{
+
+    max-width: 400px;
+    width: 100%;
+    margin: 0 auto;
+    border: none;
+
+}
+#formbg{
+  background-image: url("../../images/member1.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+ 
+  form{
+     
+      
+      margin: 0 auto;
+      max-width: 800px;
+      min-width: 300px;
+      width: 100%;
+      
+      
+    
+      
+  
+      
+      padding: 16px;
+      background-image: url("");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      line-height: 1rem;
+      position: relative;
+      
+
+    }
+
+    table{
+
+      margin: 0 auto;
+      margin-top: 10px;
+      
+     
+      max-width: 700px;
+      min-width: 300px;
+      width: 100%;
+      
+      
+      
+      
+      
+    }
+    td,th{
+        border:1px solid rgba(253, 250, 249, 50%);
+        
+        
+        
+    }
+    th{
+        color: white;
+        padding: 0 4px 0 4px;
+        width: 25%;
+        height: 30px;
+        
+        
+ 
+    }
+    td{
+      width: 33%;
+      min-height: 30px;
+      height: 30px;
+      font-size: 0.8em;
+      padding: 10px 0 10px 0;
+    }
+    #sel{
+      padding-top: 30px;
+      padding-bottom: 30px;
+      padding-left: 80px;
+      text-align: left;
+
+
+
+    }
+   .sel{
+     padding-right: 20px;
+
+
+   }
+    
+  
+  
+    .tel1{
+
+      width: 30px;
+      
+  }
+
+  #type1, #type2, #type3{
+
+    margin: 5px 2px 22px 15px;
+ 
+
+  }
+  .radiof{
+
+    text-align: center !important;
+  }
+
+    /* Full-width input fields */
+      input[type=text], input[type=password] {
+      width: 46%;
+      padding: 10px;
+      margin: 15px 20px 22px 20px;
+      border: none;
+      background: #ee5028;
+      border-radius: 0.2rem;
+      color: white;
+      
+    }
+    
+    input[type=text]:focus, input[type=password]:focus {
+      background-color: rgb(238, 135, 121);
+      outline: none;
+    }
+    
+    label{
+      padding: 15px;
+      margin: 5px 0px 22px 110px;
+    }
+    .selectb{
+      
+      
+      margin: 5px 0px 22px 110px;
+      
+    }
+    .selectc{
+      margin: 5px 0px 22px 110px;
+    }
+    select{
+
+      border:none;
+      border-radius: 0.2rem;
+      margin: 15px 0 15px 0;
+      width:90%;
+      height: 55px;
+      
+      font-size: 0.9rem;
+      
+      color: white;
+      max-width: 150px;
+      
+      
+    }
+    textarea{
+
+      max-width: 500px;
+      color: antiquewhite;
+      background: #c2bf11;
+      
+    }
+
+    #radio{
+      margin: 5px 0px 22px 110px;
+    }
+    /* Set a style for the submit button */
+    #btn {
+      background-color: rgb(107, 51, 107);
+      color: white;
+      
+      border: none;
+      cursor: pointer;
+      width: 60%;
+      opacity: 1;
+      border-radius:0.5rem;
+      margin: 0 10px 0 10px;
+      
+      transition: all 0.5s linear;
+      vertical-align: middle;
+      
+    }
+    
+    #btn:hover, #btn1:hover, .btn0:hover, .btn1:hover {
+      opacity: 0.5;
+    }
+    #btn1{
+      background-color: rgb(107, 51, 107);
+      color: rgb(247, 244, 247);
+      
+      border: none;
+      cursor: pointer;
+      width: 17%;
+      opacity: 1;
+      margin: 5px 10px 10px 15px;
+      border-radius:0.5rem;
+      transition: all 0.5s linear;
+      
+    }
+    .btn0{
+      background-color: rgb(107, 51, 107);
+      color: rgb(247, 244, 247);
+      
+      border: none;
+      cursor: pointer;
+      width: 17%;
+      opacity: 1;
+      margin: 5px 10px 10px 15px;
+      border-radius:0.5rem;
+      transition: all 0.5s linear;
+
+    }
+    .btn1{
+      background-color: rgb(107, 51, 107);
+      color: rgb(247, 244, 247);
+      
+      border: none;
+      cursor: pointer;
+      width: 22%;
+      opacity: 1;
+      margin: 5px 10px 10px 15px;
+      border-radius:0.5rem;
+      transition: all 0.5s linear;
+
+    }
+
+    .btn2{
+      background-color: rgb(107, 51, 107);
+      color: rgb(247, 244, 247);
+      padding: 16px 20px;
+      border: none;
+      cursor: pointer;
+      width: 30%;
+      opacity: 0.9;
+      border-radius: 1rem;
+      position: absolute;
+      top: 500px;
+      right: 65px;
+    }
+    #tbodyResult input[type=submit] {
+      background-color: #0ac20a;
+      color: rgb(247, 244, 247);
+      
+      border: none;
+      cursor: pointer;
+      width: 17%;
+      opacity: 1;
+      margin: 5px 10px 10px 15px;
+      border-radius:0.5rem;
+      transition: all 0.5s linear;
+    }
+    .di{
+        width: 100%;
+        height: 100px;
+        color: white;
+        text-align: center;
+        font-size: 2rem;
+        margin-top: 40px;
+    }
+  
+ 
+ 
+  
+  #member_phone2, #member_phone3{
+      margin-left: auto;
+      margin-right: auto;
+      width: 23.5%;
+  }
+ 
+  
+  footer{
+    height: 150px;
+  }
+  img{
+  width: 30%;
+  }
+  #align{
+  
+  max-width: 400px;
+  min-width: 300px;
+  width: 100%;
+  margin-right: 10px;
+  height: 400px;
+  
+  
+  
+  
+  }
+  #align td{
+  font-size: 1rem;
+  }
+  
+  #align th{
+  font-size: 1rem;
+  }
+  
+  th, td{
+  vertical-align: middle;
+  }
+  
+  .align{
+  
+  display: inline-block;
+  }
+ 
+  
+  
+  #table1 td{
+  height:80px;
+  font-size: 1rem;
+  }
+  #table1{
+  
+ 	  max-width: 500px;
+      min-width: 300px;
+  }
+  table a{
+
+    text-decoration: none;
+  }
+  
+  #btn3{
+   background-color: #0ac20a;
+      color: white;
+      
+      border: none;
+      cursor: pointer;
+      width: 80%;
+      opacity: 1;
+      border-radius:0.5rem;
+      margin: 0 10px 0 10px;
+      
+      transition: all 0.5s linear;
+      vertical-align: middle;
+  
+  }
+  #tdur{
+  
+      font-size: 1rem;
+      max-width: 500px;
+      min-width: 300px;
+    
+  
+  }
+  .btn5{
+    background-image: url("../../images/naver.png");
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: rgb(247, 244, 247);
+    padding-top: 1px;
+    padding-left: 40px;
+    border: none;
+    cursor: pointer;
+    width: 28%;
+    height: 40px;
+    opacity: 0.9;
+    border-radius: 0.8rem;
+    margin-right: 20px;
+   
+  
+  }
+  .btn4{
+    background-image: url("../../images/google.png");
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: rgb(247, 244, 247);
+    padding-top: 1px;
+    padding-left: 40px;
+    border: none;
+    cursor: pointer;
+    width: 28%;
+    height: 40px;
+    opacity: 0.9;
+    border-radius: 0.8rem;
+    position: absolute;
+    top: 452px;
+    left: 120px;
+    
+  
+  }
+  .btn3{
+    background-image: url("../../images/kakao.png");
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: rgb(44, 28, 4);
+    padding-top: 1px;
+    padding-left: 40px;
+    border: none;
+    cursor: pointer;
+    width: 28%;
+    height: 40px;
+    opacity: 0.9;
+    border-radius: 0.8rem;
+    
+  
+  }
+ 
+  
+  
